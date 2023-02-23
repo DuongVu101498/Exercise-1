@@ -16,10 +16,12 @@ jobs:
     - name: Build the Docker image
       run: |
        docker build . --file Dockerfile --tag my-image-name:v1
-    - uses: docker/login-action@v2
+    - name: Login to Docker Hub
+      uses: docker/login-action@v2
       with:
           username: ${{ secrets.DOCKER_USER }}
           password: ${{ secrets.DOCKER_PWD }}
+          logout: flase
     - name: Push the Docker image
       run: |
        docker push my-image-name:v1
