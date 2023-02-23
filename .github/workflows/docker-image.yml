@@ -21,7 +21,7 @@ jobs:
       with:
           username: ${{ secrets.DOCKER_USER }}
           password: ${{ secrets.DOCKER_PWD }}
-          logout: flase
+          logout: false
     - name: Push the Docker image
       run: |
        docker push my-image-name:v1
