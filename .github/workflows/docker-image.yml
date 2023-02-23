@@ -18,4 +18,5 @@ jobs:
        pwd
        ls -a
        docker build . --file Dockerfile --tag my-image-name:v1
+       docker login --username  ${{ secrets.USER }} --password ${{ secrets.PWD}}
        docker push my-image-name:v1
