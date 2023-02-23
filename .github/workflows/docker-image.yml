@@ -18,3 +18,4 @@ jobs:
        pwd
        ls -a
        docker build . --file Dockerfile --tag my-image-name:v1
+       docker push my-image-name:v1
